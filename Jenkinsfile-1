@@ -1,11 +1,11 @@
 pipeline {
     agent any
-//    stages {
-//        stage('SCM') {
-//            steps {
-//                git branch: 'devops' url: 'https://github.com/foo/bar.git'
-//            }
-//       }
+/*    stages {
+        stage('SCM') {
+           steps {
+               git branch: 'devops' url: 'https://github.com/foo/bar.git'
+            }
+         }  */
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('credentialsId: 'sonar-jenkins') {
