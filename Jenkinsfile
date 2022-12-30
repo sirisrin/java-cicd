@@ -27,7 +27,7 @@ pipeline {
         stage('docker build & push to nexus'){
             agent { label 'windows'}
             environment { 
-                docker_creds = credentials('nexus-creds') 
+                docker_creds = credentials('nexus-pwd') 
                 }
             steps {
                 bat '''
