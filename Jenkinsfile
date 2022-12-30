@@ -30,7 +30,7 @@ pipeline {
                 docker_creds = credentials('nexus-pwd') 
                 }
             steps {
-                bat '''
+                powershell '''
                     docker build -t 192.168.0.170:8083/springboot:${env.BUILD_ID} .
                     docker login -u admin -p ${docker_creds} 192.168.0.170:8083
                     docker push 192.168.0.170:8083/docker-private/springboot:${env.BUILD_ID} 
